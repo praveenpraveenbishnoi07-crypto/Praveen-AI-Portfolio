@@ -479,4 +479,32 @@ footer{
 
 .testimonial-card h4{
     color:#00d4ff;
+}.faq{
+    padding:100px 8%;
+    background:#07111f;
+}
+
+.faq h2{
+    text-align:center;
+    color:#00d4ff;
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.faq-item{
+    background:#111c2f;
+    margin-bottom:20px;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(0,212,255,.2);
+}
+
+.faq-item h3{
+    color:#00d4ff;
+    margin-bottom:10px;
+}
+
+.faq-item p{
+    color:#ddd;
+    line-height:1.7;
 }

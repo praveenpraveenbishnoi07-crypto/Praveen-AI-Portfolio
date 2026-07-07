@@ -1,53 +1,102 @@
 console.log("Praveen AI Portfolio Loaded Successfully 🚀");
+
+// ===============================
+// Contact Form
+// ===============================
 const form = document.querySelector(".contact-form");
 
-form.addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("Thank you! Your message has been sent.");
-});
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("✅ Thank you! Your message has been sent.");
+        form.reset();
+    });
+}
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-console.log("Stats section loaded successfully.");
+// ===============================
+// Mobile Menu
+// ===============================
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.querySelector(".nav-menu");
+
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("active");
+        });
+    });
+}
+
+// ===============================
+// Dark / Light Mode
+// ===============================
 const themeBtn = document.getElementById("theme-toggle");
+
+if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+
+        themeBtn.textContent =
+            document.body.classList.contains("light-theme")
+                ? "☀️"
+                : "🌙";
+    });
+}
+
+// ===============================
+// Back To Top Button
+// ===============================
 const backBtn = document.getElementById("backToTop");
 
-themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
-    themeBtn.textContent =
-        document.body.classList.contains("light-theme") ? "☀️" : "🌙";
-});
+if (backBtn) {
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-        backBtn.classList.add("show");
-    } else {
-        backBtn.classList.remove("show");
-    }
-});
+    window.addEventListener("scroll", () => {
 
-backBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        if (window.scrollY > 300) {
+            backBtn.classList.add("show");
+        } else {
+            backBtn.classList.remove("show");
+        }
+
     });
-});
+
+    backBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}
+
+// ===============================
+// Scroll Animation
+// ===============================
 const sections = document.querySelectorAll("section");
 
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
             entry.target.classList.add("show");
         }
+
     });
-},{
-    threshold:0.2
+
+}, {
+    threshold: 0.2
 });
 
-sections.forEach(section=>{
+sections.forEach(section => {
     section.classList.add("fade-up");
     observer.observe(section);
 });
+
+console.log("✅ All JavaScript Loaded Successfully");

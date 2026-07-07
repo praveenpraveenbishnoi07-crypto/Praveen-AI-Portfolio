@@ -270,4 +270,43 @@ transform:translateY(0);
 .card h3{
     color:#00d4ff;
     margin-bottom:15px;
+}.services{
+    padding:100px 8%;
+    background:#07111f;
+    text-align:center;
+}
+
+.services h2{
+    font-size:42px;
+    color:#00d4ff;
+    margin-bottom:50px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:#111c2f;
+    padding:30px;
+    border-radius:20px;
+    transition:0.4s;
+    border:1px solid rgba(0,212,255,0.2);
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0,212,255,.25);
+}
+
+.service-card h3{
+    color:#00d4ff;
+    margin-bottom:15px;
+}
+
+.service-card p{
+    color:#ccc;
+    line-height:1.7;
 }
